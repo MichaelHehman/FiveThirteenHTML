@@ -1,27 +1,162 @@
-/* ---- Color System ---- */  
+/* ---------- Color System ---------- */  
 :root{  
-  --primary:#cf1e1e;      
-  --accent:#000000;       
-  --light:#e5e5e5;  
+  --primary:#cf1e1e;         /* crimson */  
+  --accent:#000000;          /* black */  
+  --light:#e5e5e5;           /* page background */  
   --white:#ffffff;  
-  --shadow:rgba(31, 30, 30, 0.726);  
+  --shadow:rgba(31,30,30,.18);  
 }  
   
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial,sans-serif;}  
-body{background:var(--light);color:var(--primary);line-height:1.6;}  
+*{  
+  margin:0;  
+  padding:0;  
+  box-sizing:border-box;  
+  font-family:"Helvetica Neue",Arial,sans-serif;  
+}  
   
-/* ---- Navbar ---- */  
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--primary);color:var(--white);position:sticky;top:0;z-index:1000;}  
+body{  
+  background:var(--light);  
+  color:var(--primary);  
+  line-height:1.6;  
+}  
+  
+/* ---------- Navbar ---------- */  
+.navbar{  
+  display:flex;  
+  justify-content:space-between;  
+  align-items:center;  
+  padding:1rem 2rem;  
+  background:var(--primary);  
+  color:var(--white);  
+  position:sticky;  
+  top:0;  
+  z-index:1000;  
+}  
 .logo{font-size:1.5rem;font-weight:700;}  
-.nav-links a{color:var(--white);margin-left:1.25rem;text-decoration:none;position:relative;}  
+.nav-links a{  
+  color:var(--white);  
+  margin-left:1.25rem;  
+  text-decoration:none;  
+  position:relative;  
+}  
 .nav-links a.active::after,  
-.nav-links a:hover::after{content:"";height:2px;width:100%;background:var(--accent);position:absolute;left:0;bottom:-4px;}  
+.nav-links a:hover::after{  
+  content:"";  
+  height:2px;  
+  width:100%;  
+  background:var(--accent);  
+  position:absolute;  
+  left:0;  
+  bottom:-4px;  
+}  
   
-/* ---- Hamburger ---- */  
-.hamburger{display:none;flex-direction:column;border:none;background:none;cursor:pointer;}  
-.bar{width:25px;height:3px;background:var(--white);margin:4px 0;transition:.3s;}  
+/* ---------- Hamburger ---------- */  
+.hamburger{  
+  display:none;  
+  flex-direction:column;  
+  border:none;  
+  background:none;  
+  cursor:pointer;  
+}  
+.bar{  
+  width:25px;  
+  height:3px;  
+  background:var(--white);  
+  margin:4px 0;  
+  transition:.3s;  
+}  
   
-/* ---- Hero ---- */  
-.hero{display:flex;
-
-}
+/* ---------- Hero ---------- */  
+.hero{  
+  display:flex;  
+  flex-direction:column;  
+  align-items:center;  
+  justify-content:center;  
+  text-align:center;  
+  min-height:70vh;  
+  padding:3rem 1rem;  
+  background:url("hero.jpg") center/cover no-repeat;  
+  color:var(--white);  
+}  
+.hero h1{font-size:2.7rem;margin-bottom:.6rem;}  
+.hero p{font-size:1.25rem;margin-bottom:1.5rem;}  
+.cta{  
+  background:var(--accent);  
+  color:var(--white);  
+  padding:.8rem 1.6rem;  
+  border-radius:4px;  
+  text-decoration:none;  
+  font-weight:600;  
+}  
+.cta:hover{background:#333;}  
+  
+/* ---------- Wrapper (centers every page) ---------- */  
+.wrapper{  
+  max-width:900px;  
+  margin:0 auto;  
+  padding:2rem 1rem;  
+}  
+.wrapper h2{margin-bottom:1rem;font-size:2rem;font-weight:600;}  
+.wrapper p{margin-bottom:1rem;}  
+  
+/* ---------- Form polish ---------- */  
+form{  
+  display:flex;  
+  flex-direction:column;  
+  gap:.75rem;  
+}  
+form input,form select,form textarea{  
+  padding:.6rem;  
+  border:1px solid var(--shadow);  
+  border-radius:4px;  
+}  
+form button{  
+  background:var(--primary);  
+  color:var(--white);  
+  padding:.7rem;  
+  border:none;  
+  border-radius:4px;  
+  cursor:pointer;  
+}  
+form button:hover{background:var(--accent);}  
+  
+/* ---------- Game-schedule table ---------- */  
+.game-table{  
+  width:100%;  
+  border-collapse:collapse;  
+  margin-top:1rem;  
+}  
+.game-table th,  
+.game-table td{  
+  padding:.75rem .5rem;  
+  text-align:center;  
+}  
+.game-table thead{  
+  background:var(--primary);  
+  color:var(--white);  
+}  
+.game-table tbody tr:nth-child(even){background:var(--white);}  
+  
+/* ---------- Card utility (future use) ---------- */  
+.card{  
+  background:var(--white);  
+  padding:1.5rem;  
+  border-radius:6px;  
+  box-shadow:0 2px 6px var(--shadow);  
+}  
+  
+/* ---------- Responsive tweaks ---------- */  
+@media(max-width:768px){  
+  .nav-links{  
+    display:none;  
+    position:absolute;  
+    top:70px;  
+    right:0;  
+    background:var(--primary);  
+    flex-direction:column;  
+    width:200px;  
+  }  
+  .nav-links a{margin:1rem;}  
+  .hamburger{display:flex;}  
+  .hero h1{font-size:2.2rem;}  
+}  

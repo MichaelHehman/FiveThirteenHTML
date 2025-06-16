@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">  
 </head>  
 <body>  
+  <!-- ========= NAVBAR ========= -->  
   <header class="navbar">  
     <div class="logo">Five Thirteen LC</div>  
     <nav id="nav-links" class="nav-links">  
@@ -20,18 +21,31 @@
     </button>  
   </header>  
   
-  <main class="page-content">  
-    <h2>Register for the 2025 Season</h2>  
-    <form action="#" method="POST" class="signup-form">  
-      <label>Player Name <input type="text" name="name" required></label>  
-      <label>Email <input type="email" name="email" required></label>  
-      <label>Graduation Year  
-        <select name="grad" required>  
-          <option>2025</option><option>2026</option><option>2027</option>  
-        </select>  
-      </label>  
-      <button type="submit" class="cta">Submit</button>  
-    </form>  
+  <!-- ========= MAIN (now centered) ========= -->  
+  <main>  
+    <div class="wrapper">  
+      <h2>Register for the 2025 Season</h2>  
+  
+      <form action="#" method="POST">  
+        <label>Player Name  
+          <input type="text" name="name" required>  
+        </label>  
+  
+        <label>Email  
+          <input type="email" name="email" required>  
+        </label>  
+  
+        <label>Graduation Year  
+          <select name="grad" required>  
+            <option>2025</option>  
+            <option>2026</option>  
+            <option>2027</option>  
+          </select>  
+        </label>  
+  
+        <button type="submit">Submit</button>  
+      </form>  
+    </div>  
   </main>  
   
   <footer>© 2025 Five Thirteen Lacrosse Club</footer>  
