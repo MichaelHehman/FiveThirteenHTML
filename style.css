@@ -1,10 +1,10 @@
 /* ---- Color System ---- */  
 :root{  
-  --primary:#14213d;     /* deep navy  */  
-  --accent:#fca311;      /* lacrosse gold */  
+  --primary:#cf1e1e;      
+  --accent:#000000;       
   --light:#e5e5e5;  
   --white:#ffffff;  
-  --shadow:rgba(0,0,0,.1);  
+  --shadow:rgba(31, 30, 30, 0.726);  
 }  
   
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial,sans-serif;}  
@@ -23,3 +23,5 @@ body{background:var(--light);color:var(--primary);line-height:1.6;}
   
 /* ---- Hero ---- */  
 .hero{display:flex;
+
+}
