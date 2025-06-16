@@ -1,0 +1,25 @@
+/* ---- Color System ---- */  
+:root{  
+  --primary:#14213d;     /* deep navy  */  
+  --accent:#fca311;      /* lacrosse gold */  
+  --light:#e5e5e5;  
+  --white:#ffffff;  
+  --shadow:rgba(0,0,0,.1);  
+}  
+  
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Helvetica Neue",Arial,sans-serif;}  
+body{background:var(--light);color:var(--primary);line-height:1.6;}  
+  
+/* ---- Navbar ---- */  
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--primary);color:var(--white);position:sticky;top:0;z-index:1000;}  
+.logo{font-size:1.5rem;font-weight:700;}  
+.nav-links a{color:var(--white);margin-left:1.25rem;text-decoration:none;position:relative;}  
+.nav-links a.active::after,  
+.nav-links a:hover::after{content:"";height:2px;width:100%;background:var(--accent);position:absolute;left:0;bottom:-4px;}  
+  
+/* ---- Hamburger ---- */  
+.hamburger{display:none;flex-direction:column;border:none;background:none;cursor:pointer;}  
+.bar{width:25px;height:3px;background:var(--white);margin:4px 0;transition:.3s;}  
+  
+/* ---- Hero ---- */  
+.hero{display:flex;
