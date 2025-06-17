@@ -2,7 +2,7 @@
 :root{  
   --primary:#cf1e1e;         /* crimson */  
   --accent:#000000;          /* black */  
-  --light:#e5e5e5;           /* page background */  
+  --light:#ffffff;           /* page background */  
   --white:#ffffff;  
   --shadow:rgba(31,30,30,.18);  
 }  
@@ -19,7 +19,14 @@ body{
   color:var(--primary);  
   line-height:1.6;  
 }  
-  
+/*-------- Animations --------*/
+
+/* ---------- Ken-Burns slow zoom ---------- */  
+@keyframes hero-zoom{  
+  0%   { background-size:85%; }  
+  100% { background-size:100%; }  
+}  
+
 /* ---------- Navbar ---------- */  
 .navbar{  
   display:flex;  
@@ -73,13 +80,35 @@ body{
   align-items:center;  
   justify-content:center;  
   text-align:center;  
+
+  /* solid fill underneath the photo */  
+  background-color:#000000;        /* or var(--accent) */  
+  
+  /* photo layer */  
+  background:url("FiveThirteenLC%20Image.jpg") center/cover no-repeat; 
+  background-position:center;  
+  background-repeat:no-repeat;   
+  background-size: 80%;
+  animation:hero-zoom 15s ease-in-out forwards;  
+  
   min-height:70vh;  
-  padding:3rem 1rem;  
-  background:url("hero.jpg") center/cover no-repeat;  
   color:var(--white);  
+  position:relative;           /* gives us a stacking context */  
 }  
+  
+/* subtle dark veil so text stays legible */  
+.hero::before{  
+  content:"";  
+  position:absolute;  
+  inset:0;                     /* stretch across entire hero */  
+  background:rgba(0, 0, 0, 0.45);  /* 45 % black */  
+}  
+  
+/* keep all direct children (h1, p, button) above the veil */  
+.hero > *{position:relative;}  
+  
 .hero h1{font-size:2.7rem;margin-bottom:.6rem;}  
-.hero p{font-size:1.25rem;margin-bottom:1.5rem;}  
+.hero p {font-size:1.25rem;margin-bottom:1.5rem;}  
 .cta{  
   background:var(--accent);  
   color:var(--white);  
@@ -88,7 +117,7 @@ body{
   text-decoration:none;  
   font-weight:600;  
 }  
-.cta:hover{background:#333;}  
+.cta:hover{background:#000000;}  
   
 /* ---------- Wrapper (centers every page) ---------- */  
 .wrapper{  
